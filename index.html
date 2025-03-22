@@ -96,16 +96,14 @@
                     <div id="w-node-_09ff2cdd-fe2c-6629-af39-94c263272602-5fd9d824" class="row1">Advisors:<br/><span class="text-span-4">30 Million (3%).</span></div>
                     <div id="w-node-_09ff2cdd-fe2c-6629-af39-94c263272602-5fd9d824" class="row1">Airdrop Rewards: <br/><span class="text-span-4">20 Million (2%)</span></div>
                     <div id="w-node-_2d18da7a-de96-bf7e-873b-18011a8b0ee1-5fd9d824" class="row1-copy">
-                        <div>Contract address</div>
-
                         
-                        <span class="text-span" id="contractAddress">Coming Soon</span>
-
+                     <div>Contract address</div>
                         
-                        <button onclick="copyCA()">Copy CA</button>
-
+                       <div class="wallet-container">
                         
-                        <p id="message"></p>
+                        <span class="wallet-address" id="wallet">BPVLgPe2mPPd8mZr2K4eUDnzdGopb371n3hCU6JB9gTd</span>
+                        <button class="copy-btn" onclick="copyWallet()">Copy</button>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -234,17 +232,17 @@
 </html>
 <script>
     // Function to copy the contract address to the clipboard
-    function copyCA() {
-        // Get the text content of the contract address
-        var contractAddress = document.getElementById("contractAddress").textContent;
+    function copyWallet() {
+            const walletText = document.getElementById("wallet").innerText;
+            const tempInput = document.createElement("textarea");
+            tempInput.value = walletText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");  // Fallback method for older browsers
+            document.body.removeChild(tempInput);
 
-        // Use the Clipboard API to copy the content
-        navigator.clipboard.writeText(contractAddress).then(function() {
-            // Display success message
-            document.getElementById("message").textContent = "Contract address copied to clipboard!";
-        }).catch(function(err) {
-            // Display failure message
-            document.getElementById("message").textContent = "Failed to copy contract address.";
-        });
-    }
+            const button = document.querySelectorAll(".copy-btn");
+            button.innerText = "Copied!";
+            setTimeout(() => button.innerText = "Copy", 2000);
+        }
 </script>
