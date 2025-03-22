@@ -127,7 +127,7 @@ pre {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 250px;
+    max-width: 150px;
     cursor: pointer;
 }
 .wallet-address:hover {
