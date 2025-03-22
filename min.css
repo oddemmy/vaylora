@@ -635,7 +635,7 @@ label {
 .w-select[readonly],
 fieldset[disabled] .w-input,
 fieldset[disabled] .w-select {
-    cursor: not-allowed
+    cursor: allowed
 }
 
 .w-input[disabled]:not(.w-input-disabled),
