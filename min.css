@@ -110,6 +110,48 @@ hr {
 pre {
     overflow: auto
 }
+.wallet-container {
+    display: flex;
+    align-items: center;
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    max-width: 300px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.wallet-address {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 250px;
+    cursor: pointer;
+}
+.wallet-address:hover {
+    overflow: visible;
+    white-space: normal;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 10;
+}
+.copy-btn {
+    background-color: #ff8000;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.copy-btn:hover {
+    background-color: #e67300;
+}
+
 
 code,
 kbd,
